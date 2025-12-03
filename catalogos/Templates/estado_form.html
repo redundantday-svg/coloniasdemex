@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block title%} crear {%endblock%}
+{%block content%}
+<body>
+    <div>
+<h2>Formulario Estados</h2>
+<form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Guardar</button>
+<!--<form method="post" action="{% url 'estado_update'}">
+        {% csrf_token %}
+        <button type="submit">Editar</button>
+    </form>
+<form method="post" action="{estado_confirm_delete}">
+    <button type="submit">eliminar</button>-->
+
+</form>
+</div>
+</body>
+{%endblock%}

@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{%block title%}elimina registro{%endblock%}
+{%block content%}
+
+<h2 class="palcentro">¿Eliminar "{{estado.nombre}}"?</h2>
+<form class="palcentro" method="post">
+    {%csrf_token%}
+    <button type="submit">Confrimar</button>
+    <a class="btwon" href="{%url 'estado_list'%}"> Cancelar</a>
+</form>
+{%endblock%}

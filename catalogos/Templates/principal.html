@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Principal{% endblock %}
+{% block content %}
+
+<h2 class="derecha">Buscar Código postal, Colonias, Municipios o Estados</h2>
+
+<form class="derecha" method="get" action="{% url 'principal' %}">
+    <input type="text" name="q" value="{{ q }}" placeholder="Ingresa colonia, municipio, estado o código postal" />
+    <button type="submit">Buscar</button>
+    {% if q %}<a class="btwon" href="{% url 'principal' %}">Nueva busqueda</a>{% endif %}
+</form>
+
+<!-- Colonias Section -->
+{% if colonias %}
+<div>
+    <h3>Colonias ({{ colonias.count }})</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Colonia</th>
+                <th>Código Postal</th>
+                <th>Municipio</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for colonia in colonias %}
+            <tr>
+                <td>{{ colonia.nombre }}</td>
+                <td>{{ colonia.codigo_p }}</td>
+                <td>{{ colonia.municipio_p.nombre }}</td>
+                <td>{{ colonia.municipio_p.estadop.nombre }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+<!-- Municipios Section -->
+{% if municipios %}
+<div>
+    <h3>Municipios ({{ municipios.count }})</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Municipio</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for municipio in municipios %}
+            <tr>
+                <td>{{ municipio.nombre }}</td>
+                <td>{{ municipio.estadop.nombre }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+<!-- Estados Section -->
+{% if estados %}
+<div>
+    <h3>Estados ({{ estados.count }})</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Clave</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estado in estados %}
+            <tr>
+                <td>{{ estado.clave }}</td>
+                <td>{{ estado.nombre }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+{% if not colonias and not municipios and not estados %}
+<div>
+    <p>No se encontraron resultados.</p>
+</div>
+{% endif %}
+
+{% endblock %}

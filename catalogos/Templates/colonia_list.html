@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block title%}listado{%endblock%}
+{%block content%}
+
+
+    
+<h2>colonias de méxico</h2>
+<div>
+    <table style=>
+
+    
+    <thead> 
+        <tr>
+            <th>nombre</th>
+            <th>municipio al que pertenece</th>
+            <th>código postal</th>
+            <th>acciones</th>
+        </tr></thead>
+        <tbody >
+            {%for colonia in colonias%}
+            <tr>
+                <td>{{colonia.nombre}}
+                </td>
+                <td>{{colonia.municipio_p}}</td>
+                <td>{{colonia.codigo_p}}</td>
+                <td> 
+                <a class="boton" href="{% url 'colonia_update' pk=colonia.id %}">Editar</a>
+                    |
+                <a class="boton" href="{% url 'colonia_delete' pk=colonia.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+        </table>
+</div>
+
+{%endblock%}

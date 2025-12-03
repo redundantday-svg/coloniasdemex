@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%block title%}listado{%endblock%}
+{%block content%}
+
+
+    
+<h2>Estados de la República</h2>
+<div>
+    <table style=>
+
+    
+    <thead> 
+        <tr>
+            <th>Clave</th>
+            <th>Estado</th>
+            <th>acciones</th>
+        </tr></thead>
+        <tbody >
+            {% for estado in estados %}
+            <tr>
+                <td>{{ estado.clave }}
+                </td>
+                <td>{{ estado.nombre }}</td>
+                <td>
+                    <a class="boton" href="{% url 'estado_update' pk=estado.id %}">Editar</a>
+                    |
+                    <a class="boton" href="{% url 'estado_delete' pk=estado.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+</div>
+
+{%endblock%}

@@ -1,0 +1,106 @@
+body {
+        background: linear-gradient(135deg, #adafc2 0%, #e0cece 100%);
+        justify-content: center;
+        padding: 20px;
+        }
+    table {
+        background-color: #7c7474;
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1.1rem;
+        box-shadow: 2px 5px 15px rgba(144, 48, 48, 0.804);
+        }
+    th, td {
+        border: 1px solid #000000;
+        padding: 16px;
+        text-align: center;
+    }
+    th {
+        background-color: #461e1e;
+        color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    nav {
+        background-color: #3a2320; /* Navbar background */
+        padding: 15px;
+        text-align: center;
+
+    }
+    nav a {
+        display: inline-flexbox;
+        padding: 14px 20px;
+        color: white;
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s ease;
+    }
+    @media (max-width: 1100px) {
+        nav a {
+            display: block;
+            margin: 10px 0;
+        }
+    }
+
+    nav a:hover,
+    nav a:focus {
+        background-color: #851616; /* Hover effect */
+        padding: 20px 20px;
+    }
+    div{ margin-top: 2rem;
+
+    }
+    .boton {
+        background-color: #4CAF50;
+        background: #4CAF50;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: large;
+        color: black;
+        padding: 5px 5px;
+        border-radius: 10px;
+
+    }
+    form input[type="text"] {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 300px;
+    }
+    form button {
+        padding: 10px 15px;
+        font-size: 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .boton:visited {
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        background: #4CAF50;
+        padding: 5px 5px;
+    }
+    .boton:hover {
+        color: #ffffff;
+        background-color: #000000;
+        background: #4CAF50;
+        padding: 5px 5px;
+    }
+    .btwon {
+        background-color: #aa0d0d;
+        background: #863030;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: large;
+        color: rgb(255, 255, 255);
+        padding: 10px 15px;}
+    h1 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333333;
+        text-align: center;
+    }
+    .palcentro{text-align: center;}
+    .derecha{text-align: right;
+    margin-bottom:1rem;}
